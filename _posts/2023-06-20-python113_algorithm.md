@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "encapsulation"
+title:  "알고리즘이란?"
 ---
 
 # 알고리즘이란?

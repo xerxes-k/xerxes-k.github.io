@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "encapsulation"
+title:  "알고리즘 패러다임 Algorithm Paradigm"
 ---
 
 # 알고리즘 패러다임 Algorithm Paradigm
