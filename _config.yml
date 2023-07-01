@@ -12,15 +12,15 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "generous xerxes the k"
+title                    : "K's crumbles"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "xerxes-k"
-description              : "the place where i write about things i learn along the way"
+name                     : "crumbly-k"
+description              : "the place where i leave crumbles about what and how i've learned"
 url                      : "https://xerxes-k.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -49,7 +49,7 @@ comments:
     category_id          : # Shown during giscus setup at https://giscus.app
     discussion_term      : # "pathname" (default), "url", "title", "og:title"
     reactions_enabled    : # '1' for enabled (default), '0' for disabled
-    theme                : # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
+    theme                : "dark" # "light" (default), "dark", "dark_dimmed", "transparent_dark", "preferred_color_scheme"
   staticman:
     branch               : # "master"
     endpoint             : # "https://{your Staticman v3 API}/v3/entry/github/"
@@ -106,7 +106,7 @@ analytics:
 author:
   name             : "xerxes-k"
   avatar           : "/assets/images/bio.jpg"
-  bio              : "a noob trying to learn stuff"
+  bio              : "learner"
   location         : "earth"
   email            :
   links:
@@ -140,7 +140,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
+      url: "https://github.com/xerxes-k"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
