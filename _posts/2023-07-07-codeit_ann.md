@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "ann"
+title:  "aritificial neural network"
 ---
 
 **Table of contents**<a id='toc0_'></a>    

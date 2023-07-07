@@ -1,3 +1,7 @@
+---
+layout: single
+title:  "data structure"
+---
 **Table of contents**<a id='toc0_'></a>    
 - [Data Structure 자료구조](#toc1_)    
   - [정의](#toc1_1_)    

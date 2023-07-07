@@ -1,3 +1,8 @@
+---
+layout: single
+title:  "machine learning basic "
+---
+
 **Table of contents**<a id='toc0_'></a>    
 - [machine learning 기초 상식](#toc1_)    
   - [정의](#toc1_1_)    

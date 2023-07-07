@@ -1,3 +1,8 @@
+---
+layout: single
+title:  "graph "
+---
+
 **Table of contents**<a id='toc0_'></a>    
 - [graph](#toc1_)    
   - [그래프 특징](#toc1_1_)    

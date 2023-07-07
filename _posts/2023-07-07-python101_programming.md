@@ -1,3 +1,8 @@
+---
+layout: single
+title:  "programming with python "
+---
+
 # 프로그래밍이란?
 
 프로그래밍의 사전적 의미는 공연의 순서를 짜는 행위이다  

@@ -1,3 +1,8 @@
+---
+layout: single
+title:  "SOLID principles "
+---
+
 **Table of contents**<a id='toc0_'></a>    
 - [SOLID principles](#toc1_)    
   - [정의](#toc1_1_)    

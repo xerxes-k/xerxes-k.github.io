@@ -1,3 +1,8 @@
+---
+layout: single
+title:  "natural language processing "
+---
+
 **Table of contents**<a id='toc0_'></a>    
 - [natural language processing](#toc1_)    
   - [NLP 종류](#toc1_1_)    

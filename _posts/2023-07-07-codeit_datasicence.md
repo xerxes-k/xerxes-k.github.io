@@ -1,3 +1,8 @@
+---
+layout: single
+title:  "data science "
+---
+
 **Table of contents**<a id='toc0_'></a>    
 - [data science](#toc1_)    
   - [정의](#toc1_1_)    

@@ -1,3 +1,7 @@
+---
+layout: single
+title:  "data frame "
+---
 **Table of contents**<a id='toc0_'></a>    
 - [DataFrame indexing, slicing](#toc1_)    
   - [DataFrame 조회하는 방법](#toc1_1_)    

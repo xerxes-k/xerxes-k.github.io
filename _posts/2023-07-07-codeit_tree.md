@@ -1,3 +1,8 @@
+---
+layout: single
+title:  "tree data structure "
+---
+
 **Table of contents**<a id='toc0_'></a>    
 - [data structure: tree](#toc1_)    
   - [트리의 종류](#toc1_1_)    

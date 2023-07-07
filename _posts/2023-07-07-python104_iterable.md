@@ -1,3 +1,9 @@
+---
+layout: single
+title:  "iterables "
+---
+
+
 **Table of contents**<a id='toc0_'></a>    
 - [list, tuple, dict, set](#toc1_)    
   - [list](#toc1_1_)    

@@ -1,3 +1,8 @@
+---
+layout: single
+title:  "algorithm"
+---
+
 **Table of contents**<a id='toc0_'></a>    
 - [algorithm 알고리즘](#toc1_)    
   - [좋은 알고리즘이란?](#toc1_1_)    

@@ -1,3 +1,8 @@
+---
+layout: single
+title:  "formatting "
+---
+
 **Table of contents**<a id='toc0_'></a>    
 - [Formatting](#toc1_)    
   - [파이썬에선 크게 세 가지 포매팅 방법이 있다](#toc1_1_)    

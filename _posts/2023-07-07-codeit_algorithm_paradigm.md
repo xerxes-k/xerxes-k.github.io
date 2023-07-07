@@ -1,3 +1,8 @@
+---
+layout: single
+title:  "algorithm paradigm"
+---
+
 **Table of contents**<a id='toc0_'></a>    
 - [알고리즘 패러다임 Algorithm Paradigm](#toc1_)    
   - [Brute Force 무차별 대입법](#toc1_1_)    

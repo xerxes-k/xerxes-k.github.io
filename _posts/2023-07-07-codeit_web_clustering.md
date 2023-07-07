@@ -1,3 +1,8 @@
+---
+layout: single
+title:  "web clustering "
+---
+
 **Table of contents**<a id='toc0_'></a>    
 - [web clustering](#toc1_)    
   - [기초 상식](#toc1_1_)    

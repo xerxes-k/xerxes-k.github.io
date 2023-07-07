@@ -1,3 +1,8 @@
+---
+layout: single
+title:  "improving ml "
+---
+
 **Table of contents**<a id='toc0_'></a>    
 - [improve ML performance](#toc1_)    
   - [feature scaling](#toc1_1_)    

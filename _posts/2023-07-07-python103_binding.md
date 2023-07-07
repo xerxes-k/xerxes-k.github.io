@@ -1,3 +1,9 @@
+---
+layout: single
+title:  "variable and binding "
+---
+
+
 # 변수variable 와 할당binding
 ---
 
