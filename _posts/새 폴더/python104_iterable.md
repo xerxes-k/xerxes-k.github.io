@@ -1,0 +1,283 @@
+**Table of contents**<a id='toc0_'></a>    
+- [list, tuple, dict, set](#toc1_)    
+  - [list](#toc1_1_)    
+  - [tuple](#toc1_2_)    
+    - [packing unpacking](#toc1_2_1_)    
+  - [dict](#toc1_3_)    
+  - [set](#toc1_4_)    
+
+<!-- vscode-jupyter-toc-config
+	numbering=false
+	anchor=true
+	flat=false
+	minLevel=1
+	maxLevel=6
+	/vscode-jupyter-toc-config -->
+<!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
+
+# <a id='toc1_'></a>[list, tuple, dict, set](#toc0_)
+---
+
+## <a id='toc1_1_'></a>[list](#toc0_)
+---
+ordered, mutable
+
+
+```python
+##list
+c = [70, 75, 80, 85]
+c[1:3] = 'a'
+print(c)
+##[70, 'a', 85] 1,2가 사라지고 'a'로 치환된다
+
+c = [70, 75, 80, 85]
+c[1:2] = 'a' * 4
+print(c)
+##[70, 'a', 'a', 'a', 'a', 80, 85] 1, 2가 사라졌는데
+## 'a'가 4개가 들어가버린다
+##인덱스 순서를 맞춰주는 게 아니잖아?
+##드레그 해서 잘라내기 하고 붙여넣기 한다고 봐야겠다
+```
+
+    [70, 'a', 85]
+    [70, 'a', 'a', 'a', 'a', 80, 85]
+    
+
+
+```python
+c.remove(70)
+##특정 값을 삭제한다
+c.pop()
+##마지막 값을 호출하고 원래 리스트에서는 삭제한다
+del c[0]
+##인덱스에 해당하는 값을 삭제한다
+print(c)
+```
+
+    ['a', 'a', 'a', 80]
+    
+
+
+```python
+print(c.count(75))
+##값이 몇 개 있는지 센다
+print(c.index(80))
+##값의 인덱스가 몇인지
+c.extend(c[0:2])
+print(c)
+##끝에 더 붙인다
+c.insert(2, 7)
+print(c)
+##2번 인덱스에 값 7을 넣는다
+```
+
+    0
+    3
+    ['a', 'a', 'a', 80, 'a', 'a']
+    ['a', 'a', 7, 'a', 80, 'a', 'a']
+    
+
+## <a id='toc1_2_'></a>[tuple](#toc0_)
+---
+ordered, immutable
+
+수정이 안되는 대신 메모리 차지 용량이 작아서 값 바꿀 일 없으면 쓴다.
+
+### <a id='toc1_2_1_'></a>[packing unpacking](#toc0_)
+---
+
+```sth, sth = (sth1, sth2)``` 이렇게 바인딩 하는 걸 unpacking이라고 한다  
+```sth, sth* = (sth1, sth2, sth3)``` 하면 *붙은 애 한테 나머지가 다 바인딩 된다.
+
+
+```python
+##tuple
+k = 1,
+print(k)
+##콤마를 찍어두면 튜플로 저장된다
+
+t = 'a', 'b', 'c', 'd'
+print(t)
+##packing
+
+x, y, z, k = t
+print(x, y, z, k)
+##unpacking
+```
+
+    (1,)
+    ('a', 'b', 'c', 'd')
+    a b c d
+    
+
+## <a id='toc1_3_'></a>[dict](#toc0_)
+---
+without order, mutable
+
+순서가 없기 때문에 정수로 인덱싱 할 수 없다. key로 value를 불러야 한다.
+
+dict[key] 방식으로 호출하면 없을 때 에러가 나온다.
+에러 없이 하려면 ```dict.get('key')```를 하면 없으면 None을 뱉는다.
+
+사전을 정의하는 세 가지 방법
+1. 중괄호 {}와 콜론 : 을 이용하는 방법: {key1:value1, key2:value2, ...}
+2. dict() 함수로 리스트 안에 튜플을 가져오는 방법: dict([(key1,value1), (key2,value2), ...])
+3. dict() 함수로 정의해주는 방법: dict(key1=value1, key2=value2, ...)
+
+
+```python
+# {key1:value1, key2:value2, ...}
+d = {
+    'name': 'Bob',
+    'age': 40,
+    'jobs': 'ceo'
+}
+
+# dict([(key1,value1), (key2,value2), ...])
+e = dict([
+    ('name', 'Bob'),
+    ('age', 40),
+    ('jobs', 'ceo')
+])
+
+# dict(key1=value1, key2=value2, ...)
+f = dict(
+    name = 'Bob',
+    age = 40,
+    jobs = 'ceo'
+)
+
+##f가 쓰기에는 편하네 쉼표도 덜 치고 그 다음이 d일 듯
+##이미 튜플이 있다면 e도 쉽겠다 리스트로 말고 딕트 선언하면 되니
+```
+
+키 값으로 직접 불러올 때 키가 없으면 에러가 발생하는데  
+이때 에러를 발생시키지 않고 None을 출력하고 싶다면  
+dict.get(key, None)을 사용하면 된다.
+
+
+```python
+#불러올 때
+#f['name']으로 불러오면 좋지만
+#f.get('name')가 안전하다
+#속성으로 불러올 때 키가 없는 거면 에러가 뜨지만
+#get 메소드로 불러올 땐 없으면 None을 리턴한다
+print(f['name'])
+print(f.get('car'))
+
+```
+
+    Bob
+    None
+    
+
+dict는 순서가 없다. 따라서 pop()을 쓸 수 없다  
+그러므로 꼭 써야 한다면 popitem()을 써야 한다
+
+
+```python
+print(f.keys())
+print(f.values())
+print(f.items())
+
+list(f.keys())
+list(f.values())
+list(f.items())
+
+f.pop('name')
+f.popitem() ##dict는 순서가 없으니 .pop() 안 된다
+
+print('birth' in e)
+## False
+
+##수정
+f['name'] = 'Kelly'
+f.update(name = 'Kelly')
+print(f)
+```
+
+    dict_keys(['name', 'age', 'jobs'])
+    dict_values(['Bob', 40, 'ceo'])
+    dict_items([('name', 'Bob'), ('age', 40), ('jobs', 'ceo')])
+    False
+    {'age': 40, 'name': 'Kelly'}
+    
+
+## <a id='toc1_4_'></a>[set](#toc0_)
+---
+without order, mutable
+
+셋을 만드는 두 가지 방법
+1. 중괄호 {} 안에 콤마로 구분하여 값을 넣는다: {value1, value2, ...}
+2. set() 함수로 만든다: set([value1, value2, ...])  
+  
+**셋 안에는 중복된 값이 들어갈 수 없다. 입력을 해도 사라진다**
+
+
+```python
+set1 = set([1, 2, 3, 4])
+set2 = {3, 4, 5, 6}
+set3 = {1, 2, 3, 4, 5, 6, 6, 6}
+
+##{1, 2, 3, 4, 5, 6}
+##중복이 없다
+
+print(set1)
+print(set2)
+print(set3)
+```
+
+    {1, 2, 3, 4}
+    {3, 4, 5, 6}
+    {1, 2, 3, 4, 5, 6}
+    
+
+
+```python
+
+print(set1 & set2)
+print(set1.intersection(set2))
+##교집합
+print(set1.isdisjoint(set2))
+##False
+##disjoint가 아니니까 교집합이 있다
+
+print(set1 | set2)
+print(set1.union(set2))
+##합집합
+
+print(set1 - set2)
+print(set1.difference(set2))
+##차집합
+
+print(set1.issubset(set2))
+##False
+##부분집합이니
+
+print(set1.issuperset(set2))
+##False
+##모집합이니
+
+set1.add(77)
+print(set1)
+# set1.remove(2) ##없는 값 치면 에러 남
+# print(set1)
+set1.discard(3) ##없는 값 쳐도 넘어감
+print(set1)
+set1.clear()
+print(set1)
+```
+
+    set()
+    set()
+    True
+    {3, 4, 5, 6, 77}
+    {3, 4, 5, 6, 77}
+    {77}
+    {77}
+    False
+    False
+    {77}
+    {77}
+    set()
+    

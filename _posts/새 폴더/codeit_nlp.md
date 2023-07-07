@@ -1,20 +1,48 @@
----
-layout: single
-title:  "natural language processing"
----
-# natural language processing
+**Table of contents**<a id='toc0_'></a>    
+- [natural language processing](#toc1_)    
+  - [NLP 종류](#toc1_1_)    
+    - [rule based approach](#toc1_1_1_)    
+    - [전처리](#toc1_1_2_)    
+      - [cleaning](#toc1_1_2_1_)    
+        - [불용어 stopword](#toc1_1_2_1_1_)    
+      - [정규화 normalization](#toc1_1_2_2_)    
+      - [문장 토큰화 sentence tokenization](#toc1_1_2_3_)    
+        - [POS part of speech tagging](#toc1_1_2_3_1_)    
+        - [Penn Treebank POS tag](#toc1_1_2_3_2_)    
+        - [word net](#toc1_1_2_3_3_)    
+        - [표제어(사전적 어원) lemma 추출](#toc1_1_2_3_4_)    
+      - [정수 인코딩 ineger encoding](#toc1_1_2_4_)    
+        - [Padding](#toc1_1_2_4_1_)    
+    - [감성 분석 sentiment analysis](#toc1_1_3_)    
+      - [sentiwordnet은 감성 정보를 갖고 있다. wordnet의 단어 품사 순번 정보를 받아 올 수도 있다](#toc1_1_3_1_)    
+      - [VADER valence aware dictionary and sentiment reasoner 감성 분석용 알고리즘](#toc1_1_3_2_)    
+  - [국어](#toc1_2_)    
+  - [수료증](#toc1_3_)    
+
+<!-- vscode-jupyter-toc-config
+	numbering=false
+	anchor=true
+	flat=false
+	minLevel=1
+	maxLevel=6
+	/vscode-jupyter-toc-config -->
+<!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
+
+# <a id='toc1_'></a>[natural language processing](#toc0_)
 
 natural language : not artificial language  
 artificial language : language intentionally constructed for interaction
 
-natural language processing : making it easy for computers to analyze materials in natural language 
-
+natural language processing : making it easy for computers to analyze materials in natural language  
 NLP involves natural language understanding, natural language generation
 
+## <a id='toc1_1_'></a>[NLP 종류](#toc0_)
+---
 1. rule based approach
 2. statistics based approach >>> machine learning use this approach
 
-# rule based approach
+### <a id='toc1_1_1_'></a>[rule based approach](#toc0_)
+---
 
 difficulties:
 1. 重義 homonym 표면적으로 동일한 단어가 여러 뜻을 나타낸다
@@ -22,12 +50,16 @@ difficulties:
 3. 단어 사이의 관계를 단어만으로 연결하기 어렵다
 4. 국어의 띄어쓰기, 접사, 조사, 어순
 
-## 전처리
+### <a id='toc1_1_2_'></a>[전처리](#toc0_)
+---
 
 - 정제 cleaning: 오류, 비중요 제거
 - 정규화: 중첩 >>> 통합
 - 정수 인코딩: 인덱싱
 - 토큰화 tokenization
+
+#### <a id='toc1_1_2_1_'></a>[cleaning](#toc0_)
+---
 
 처리하기 위한 말뭉치를 corpus라 부른다  
 이를 분석하기 위해 쪼갠 단위를 token이라 한다
@@ -724,9 +756,9 @@ Counter(TEXT)
 
 
 
-불용어 stopword  
-분석 목적에 부합하지 않아 의미가 없는 단어
-
+##### <a id='toc1_1_2_1_1_'></a>[불용어 stopword](#toc0_)
+---
+분석 목적에 부합하지 않아 의미가 없는 단어  
 불용어 세트를 만들어 놓고 해당 리스트에 있는 건 없애버린다
 
 
@@ -852,6 +884,9 @@ fls
      'get']
 
 
+
+#### <a id='toc1_1_2_2_'></a>[정규화 normalization](#toc0_)
+---
 
 똑같은 뜻을 나타내는데 다른 문자를 쓸 때 정규화 normalization을 해준다  
 예) Korea, ROK, Republic of Korea, South Korea
@@ -2068,10 +2103,6 @@ def by_pstem(tokened):
     return new
 ```
 
----
-
-## 실습
-
 
 ```python
 db = pd.read_csv('imdb.tsv', delimiter='\\t')
@@ -2556,7 +2587,8 @@ db
 
 
 
-## 문장 토큰화 sentence tokenization
+#### <a id='toc1_1_2_3_'></a>[문장 토큰화 sentence tokenization](#toc0_)
+---
 
 
 ```python
@@ -2576,7 +2608,7 @@ toksent
 
 
 
-### POS part of speech tagging
+##### <a id='toc1_1_2_3_1_'></a>[POS part of speech tagging](#toc0_)
 
 
 ```python
@@ -2913,14 +2945,14 @@ def tagger(token_sent):
     return tagged
 ```
 
-## Penn Treebank POS tag
+##### <a id='toc1_1_2_3_2_'></a>[Penn Treebank POS tag](#toc0_)
 
 ![penntreebank](https://www.researchgate.net/profile/Mitchell-Marcus-2/publication/220017637/figure/tbl1/AS:393942622326789@1470934648152/The-Penn-Treebank-POS-tagset.png)
 
-## word net
+##### <a id='toc1_1_2_3_3_'></a>[word net](#toc0_)
 ![penntreebank](https://media.geeksforgeeks.org/wp-content/uploads/20190221232747/wordnet.jpg)
 
-### 표제어(사전적 어원) lemma 추출
+##### <a id='toc1_1_2_3_4_'></a>[표제어(사전적 어원) lemma 추출](#toc0_)
 am, are, is >>> be
 
 
@@ -3304,10 +3336,6 @@ def lemmatize(tagged):
             lem.append(word)
     return lem   
 ```
-
----
-
-실습
 
 
 ```python
@@ -4009,9 +4037,8 @@ dvd['cleaned_cor']
 
 
 
+#### <a id='toc1_1_2_4_'></a>[정수 인코딩 ineger encoding](#toc0_)
 ---
-
-## 정수 인코딩 ineger encoding
 
 토큰화 된 단어에 정수를 맵핑하는 방법. 가장 일반적으로는 등장 빈도를 기준으로 정렬하여 인덱스 부여
 
@@ -5244,7 +5271,7 @@ dvd['integer_encoded']
 
 
 
-## Padding
+##### <a id='toc1_1_2_4_1_'></a>[Padding](#toc0_)
 행렬로 만들기 위해 패딩을 넣기도 한다
 
 
@@ -5343,7 +5370,8 @@ dvd[['integer_encoded']]
 
 
 
-## 감성 분석 sentiment analysis
+### <a id='toc1_1_3_'></a>[감성 분석 sentiment analysis](#toc0_)
+---
 
 1. 규칙 기반 : 감성 어휘 사전에 따라 긍정, 중립, 부정을 분류
 
@@ -5456,7 +5484,7 @@ wordnet.synset('lead.v.05').definition()
 
 
 
-### sentiwordnet은 감성 정보를 갖고 있다. wordnet의 단어 품사 순번 정보를 받아 올 수도 있다
+#### <a id='toc1_1_3_1_'></a>[sentiwordnet은 감성 정보를 갖고 있다. wordnet의 단어 품사 순번 정보를 받아 올 수도 있다](#toc0_)
 
 
 ```python
@@ -5975,7 +6003,7 @@ dvd['sentiment']
 
 
 
-### VADER valence aware dictionary and sentiment reasoner 감성 분석용 알고리즘
+#### <a id='toc1_1_3_2_'></a>[VADER valence aware dictionary and sentiment reasoner 감성 분석용 알고리즘](#toc0_)
 - 축약형, 기호 등을 더 잘 추출해준다
 - 감성 총점 계산기능이 내장
 
@@ -6615,7 +6643,9 @@ dvd[['review', 'sentiment', 'vader_score']]
 
 vader는 compound 값을 0 ~ 1로 표준화해서 보여주므로 비교가 더 쉽다
 
-## 국어
+## <a id='toc1_2_'></a>[국어](#toc0_)
 
 - 국어 데이터 분석 시 영어와 달리 추가로 해야 할 작업이 있다
   - 띄어쓰기 교정
+
+## <a id='toc1_3_'></a>[수료증](https://www.codeit.kr/certificates/n3xxh-lq8ru-kF5Ru-d5PLR) [&#8593;](#toc0_)

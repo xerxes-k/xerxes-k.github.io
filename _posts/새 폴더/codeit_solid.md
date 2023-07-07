@@ -1,9 +1,24 @@
----
-layout: single
-title:  "SOLID principles"
----
+**Table of contents**<a id='toc0_'></a>    
+- [SOLID principles](#toc1_)    
+  - [정의](#toc1_1_)    
+  - [Single Responsibility Principle](#toc1_2_)    
+  - [Open/Closed Principle](#toc1_3_)    
+  - [Liskov Substitution Principle](#toc1_4_)    
+  - [Interface Segregation Principle](#toc1_5_)    
+  - [Dependency Inversion Principle](#toc1_6_)    
+  - [수료증](#toc1_7_)    
 
-# SOLID principles
+<!-- vscode-jupyter-toc-config
+	numbering=false
+	anchor=true
+	flat=false
+	minLevel=1
+	maxLevel=6
+	/vscode-jupyter-toc-config -->
+<!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
+
+# <a id='toc1_'></a>[SOLID principles](#toc0_)
+---
 
 OOP is a programming paradigm that relies on the concept of classes and objects. It is used to structure a software program into simple, reusable pieces of code blueprints (usually called classes), which are used to create individual instances of objects. There are many object-oriented programming languages including JavaScript, C++, Java, and Python.
 
@@ -12,6 +27,8 @@ therefore, designing class and object is the core of OOP.
 객체 지향 프로그래밍에선 클래스와 오브젝트를 디자인 하는 게 핵심이다  
 아래는 널리 알려진 OOP의 5가지 원칙이다  
 
+## <a id='toc1_1_'></a>[정의](#toc0_)
+---
 SOLID stands for the five principles of object-oriented programming and design. These five principles are:  
 1. Single Responsibility Principle
 2. Open/Closed Principle
@@ -26,9 +43,8 @@ introduced by Robert C. Martin (Uncle Bob) in his 2000 paper Design Principles a
 
 **원칙들이 적용됐을 때 얻게 되는 장점이 무엇이고 그러기 위해 해야 하는 건 무엇인지 알아야 취사선택 할 수 있다**
 
+## <a id='toc1_2_'></a>[Single Responsibility Principle](#toc0_)
 ---
-
-## 1. Single Responsibility Principle
 
 A class should have one and only one reason to change, meaning that a class should have only one job.
 
@@ -302,9 +318,8 @@ younghoon.grade.print_report_card()
     평균 학점:3.575
     
 
+## <a id='toc1_3_'></a>[Open/Closed Principle](#toc0_)
 ---
-
-## 2. Open/Closed Principle
 
 opend to extend, closed to modify  
 다른 클래스를 수정하지 않아도 기능을 확장할 수 있어야 한다
@@ -467,9 +482,8 @@ message_notification_manager.display_message_notifications()
     
     
 
+## <a id='toc1_4_'></a>[Liskov Substitution Principle](#toc0_)
 ---
-
-## 3. Liskov Substitution Principle
 
 부모 클래스 인스턴스를 사용할 위치에 자식 클래스 인스턴스를 사용해도 의도대로 동작해야 한다  
 자식 클래스는 부모 클래스의 행동범위를 지켜줘야 한다
@@ -531,9 +545,8 @@ class Cashier(Employee):
 
 부모 클래스를 상속 하는 의미가 없어질 만큼 수정이 발생하면 부모 클래스를 상속 받은 걸로 생각하는 다른 사람이 작업할 때 에러가 발생하거나 코드 수정에 어려움을 겪게 된다
 
+## <a id='toc1_5_'></a>[Interface Segregation Principle](#toc0_)
 ---
-
-## 4. Interface Segregation Principle
 
 추상 클래스에서 추상 매소드만 있는 걸 인터페이스라고 할 수 있다
 
@@ -672,9 +685,8 @@ print(LGPrinter.mro())
     [<class '__main__.LGPrinter'>, <class '__main__.IPrinter'>, <class 'abc.ABC'>, <class 'object'>]
     
 
+## <a id='toc1_6_'></a>[Dependency Inversion Principle](#toc0_)
 ---
-
-## 5. Dependency Inversion Principle
 
 상위 모듈은 하위 모듈에 의존하면 안 된다  
 상위 모듈과 하위 모듈 모두 추상화에 의존해야 한다  
@@ -848,3 +860,5 @@ print(HTMLExporter.mro())
     [<class '__main__.CSVExporter'>, <class '__main__.Exporter'>, <class 'abc.ABC'>, <class 'object'>]
     [<class '__main__.HTMLExporter'>, <class '__main__.Exporter'>, <class 'abc.ABC'>, <class 'object'>]
     
+
+## <a id='toc1_7_'></a>[수료증](https://www.codeit.kr/certificates/3Wz2v-j589m-eXxm6-bUlos) [&#8593;](#toc0_)

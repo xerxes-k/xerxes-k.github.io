@@ -1,0 +1,253 @@
+**Table of contents**<a id='toc0_'></a>    
+- [Formatting](#toc1_)    
+  - [파이썬에선 크게 세 가지 포매팅 방법이 있다](#toc1_1_)    
+  - [% format 모듈로 포맷](#toc1_2_)    
+  - [format 함수](#toc1_3_)    
+  - [f-string](#toc1_4_)    
+  - [그 외 print 할 때 주의할 점](#toc1_5_)    
+  - [수료증](#toc1_6_)    
+
+<!-- vscode-jupyter-toc-config
+	numbering=false
+	anchor=true
+	flat=false
+	minLevel=1
+	maxLevel=6
+	/vscode-jupyter-toc-config -->
+<!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
+
+# <a id='toc1_'></a>[Formatting](#toc0_)
+
+## <a id='toc1_1_'></a>[파이썬에선 크게 세 가지 포매팅 방법이 있다](#toc0_)
+---
+
+1. % (모듈로) 포매팅: % (modulo) operator formatting
+2. format 함수: string format() method
+3. f-string: formatted string literals
+
+## <a id='toc1_2_'></a>[% format 모듈로 포맷](#toc0_)
+---
+
+
+```python
+print('%s %s' % ('one', 'two'))
+##각 %s에 % 뒤에 오는 튜플의 문자열을 순서대로 출력한다
+```
+
+    one two
+    
+
+여기서 모듈로 연산자 %뒤에 오는 s는 문자열string을 의미한다  
+문자열 외에도 넣을 수 있는 포맷 코드는 다음과 같다
+
+%s	문자열(String)  
+%c	문자 1개(character)  
+%d	정수(Integer)  
+%f	부동소수(floating-point)  
+%o	8진수  
+%x	16진수  
+%%	Literal % (문자 % 자체)  
+
+
+```python
+print('%s %d %f' % ('one', 2, 3.14))
+```
+
+    one 2 3.140000
+    
+
+%s는 여백을 지정할 수 있다
+
+
+```python
+print('%30s' % ('on the right'))
+print('%-30s' % ('on the left'))
+```
+
+                      on the right
+    on the left                   
+    
+
+%f는 소수점 몇째짜리까지 나올지 지정할 수 있다
+
+
+```python
+print('%0.5f' % (3.141592653589793))
+```
+
+    3.14159
+    
+
+## <a id='toc1_3_'></a>[format 함수](#toc0_)
+---
+
+
+```python
+print('{} {}'.format('one', 'two'))
+##{}안에 .format 뒤에 오는 튜플의 element를 출력한다
+##문자열인지 정수인지 등은 상관이 없다
+
+print('{1} {0}'.format('one', 'two')) 
+##{인덱스} 중괄호 안에 있는 인덱스 그대로 불러온다
+##그러니 마지막은 two one으로 출력된다
+```
+
+    one two
+    two one
+    
+
+포맷 함수도 공백을 지정할 수 있다
+
+
+```python
+print('{:>10}'.format('what'))
+## >는 오른쪽 정렬, <는 왼쪽 정렬, ^ 가운데 정렬
+print('{:10}'.format('yeah'))
+## 기본은 왼쪽 정렬이다
+```
+
+          what
+    yeah      
+    
+
+format 함수로 입력할 때 값이 나올 자리가 없어도 에러가 나진 않고 그냥 안 나온다
+
+
+```python
+print('{:>10}'.format('what', 'how', 'when'))
+print('{:>10} {:>5}'.format('what', 'how', 'when'))
+```
+
+          what
+          what   how
+    
+
+특수문자가 쭉 나오게 할 수도 있다
+
+
+```python
+print('{:_>30}'.format('under score'))
+```
+
+    ___________________under score
+    
+
+공백 수 뿐만 아니라 표시하는 글자 수도 정할 수 있다  
+콜론: 특수문자, 정렬, 공백 수를 넣은 뒤 온점. 뒤에 나올 글자 수를 정해준다
+
+
+```python
+print('{:_^30.5}'.format('how many charcters are there?'))
+```
+
+    ____________how m_____________
+    
+
+이런 포맷 방식은 외울 필요 없이 그때 그때 찾아서 쓰고 자주 쓰는 것만 익히면 되겠다
+
+## <a id='toc1_4_'></a>[f-string](#toc0_)
+---
+
+가장 최근 도입된 방식이고 가장 간단하다
+
+
+```python
+x = 2023
+y = 100
+text = 99191919191919
+n = 'kim'
+
+'price = %s, quantity = %s, sum = %d' % (x, y, x+y)
+
+'price = {a}, quantity = {b}, sum = {c}'.format(a = x, b = y, c = x+y)
+
+##여기까지가 기존 두 가지 방식
+## .format이 변수에 값을 명시해줘서 가독성이 좋다고 한다
+
+f'price = {x}, quantity = {y}, sum = {x+y}'
+##새로 추가된 방식(f string) .format인데 간략하게 쓸 수 있게 했다
+
+##f string으로는 숫자 구분 기호도 넣어줄 수 있다
+print(f'example = {text:,}')
+
+print(f'{"k":10}')
+## 공백 10칸이 들어가고 문자열이고 왼쪽 정렬 된다
+print(f'{"k":^10}')
+## 가운데
+print(f'{"k":>10}')
+## 오른쪽
+
+print(f'{"k":_^10}')
+##나머지 공백을 특수문자 $가 채운다
+print(f'{"k":a^10}')
+##나머지 공백을 문자열이 채운다
+print(f'{"k":헐^10}')
+```
+
+    example = 99,191,919,191,919
+    k         
+        k     
+             k
+    ____k_____
+    aaaakaaaaa
+    헐헐헐헐k헐헐헐헐헐
+    
+
+## <a id='toc1_5_'></a>[그 외 print 할 때 주의할 점](#toc0_)
+---
+
+print 구문 안에 '나 "이 들어갈 경우 문자열이 깨지는 경우가 있다  
+그럴 땐 역슬래시back slash \를 넣으면 escape 문자로 작동해서 깨지지 않는다
+
+
+```python
+print('what \' is this')
+print('what \\ is this')
+print('what \n is this') 
+
+print('what \"\" is this')
+
+print('what "" is this')
+```
+
+    what ' is this
+    what \ is this
+    what 
+     is this
+    what "" is this
+    what "" is this
+    
+
+그냥 생각 없이 다 내뱉게 하려면 raw string을 쓰면 된다
+
+
+```python
+#raw string
+print(r'c\d\a\s\d\\d\ttt\nnn')
+```
+
+    c\d\a\s\d\\d\ttt\nnn
+    
+
+여러 줄을 쓸 땐 따옴표 세 개를 쓰면 된다
+
+
+```python
+#multi line string
+multi_2 = \
+"""
+let's see how it goes
+shall we?
+"""
+print(multi_2)
+## """이렇게 표시해주는 게 예뻐서 가독성이 좋아서 씀"""
+## 근데 한칸 내리면 에러난다 \를 넣어주고 내려야 한다
+```
+
+    
+    let's see how it goes
+    shall we?
+    
+    
+
+## <a id='toc1_6_'></a>[수료증](https://www.codeit.kr/certificates/pMRhQ-DWToJ-SwbBj-NAF9X) [&#8593;](#toc0_)

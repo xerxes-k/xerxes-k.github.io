@@ -1,17 +1,38 @@
+**Table of contents**<a id='toc0_'></a>    
+- [algorithm 알고리즘](#toc1_)    
+  - [좋은 알고리즘이란?](#toc1_1_)    
+  - [정렬과 선택 알고리즘](#toc1_2_)    
+    - [탐색](#toc1_2_1_)    
+      - [linear search 선형 탐색](#toc1_2_1_1_)    
+      - [binary search 이진 탐색](#toc1_2_1_2_)    
+  - [정렬](#toc1_3_)    
+  - [알고리즘 평가법](#toc1_4_)    
+    - [시간복잡도](#toc1_4_1_)    
+    - [공간복잡도](#toc1_4_2_)    
+  - [수료증](#toc1_5_)    
+
+<!-- vscode-jupyter-toc-config
+	numbering=false
+	anchor=true
+	flat=false
+	minLevel=1
+	maxLevel=6
+	/vscode-jupyter-toc-config -->
+<!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
+
+# <a id='toc1_'></a>[algorithm 알고리즘](#toc0_)
 ---
-layout: single
-title:  "알고리즘이란?"
+컴퓨터 알고리즘이란, (컴퓨터로 어떤 문제를 해결하기 위해서) 컴퓨터가 이해할 수 있는 방식으로 정리한 일련의 절차이다
+
+a process or set of rules to be followed in calculations or other problem-solving operations, especially by a computer.
+
+이렇게 보면 프로그래밍이랑 정의가 엄청 비슷하다. 생각해보면 이렇게 정리되는 듯 하다:  
+컴퓨터한테 "이거 이거 해"라고 할 수 없으니 작업을 순서대로 묶어주는 걸 프로그래밍이라 하고 그 정리된 작업, 즉 작업 수행 절차를 알고리즘이라 한다
+
+## <a id='toc1_1_'></a>[좋은 알고리즘이란?](#toc0_)
 ---
-
-# 알고리즘이란?
-
-컴퓨터 알고리즘이란, 컴퓨터가 어떤 문제를 해결하기 위해서 컴퓨터가 이해할 수 있는 방식으로 정리되어 있는 해결 방법이다
-
-좋은 알고리즘이란?
 1. 문제를 정확하게 해결하고
 2. 문제를 효율적으로 해결하는 알고리즘
-
-알고리즘은 결국 프로그램으로 구현한다
 
 
 ```python
@@ -25,10 +46,7 @@ def is_palindrome(word):
             return False
             # print(False)
     return True
-```
 
-
-```python
 print(is_palindrome("racecar"))
 print(is_palindrome("starsaaa"))
 print(is_palindrome("토마토"))
@@ -43,11 +61,17 @@ print(is_palindrome("hello"))
     False
     
 
-## 탐색
+## <a id='toc1_2_'></a>[정렬과 선택 알고리즘](#toc0_)
+---
 
+### <a id='toc1_2_1_'></a>[탐색](#toc0_)
+---
+- 선형 탐색 linear search
+- 이진 탐색 binary search
+
+#### <a id='toc1_2_1_1_'></a>[linear search 선형 탐색](#toc0_)
+---
 순차적으로 쭉 보는 걸 선형 탐색linear search이라고 한다
-
-만약 값이 정렬돼 있다면 중간 값을 열어보고 한쪽 방향만 찾아보는 이진 탐색binary search을 쓸 수 있다
 
 
 ```python
@@ -76,11 +100,15 @@ print(linear_search(11, [2, 3, 5, 7, 11]))
     4
     
 
+#### <a id='toc1_2_1_2_'></a>[binary search 이진 탐색](#toc0_)
+---
+만약 값이 정렬돼 있다면 중간 값을 열어보고 필요한 한쪽 방향만 찾아보는 이진 탐색binary search을 쓸 수 있다
+
 아래 문제를 푸느라 1시간 넘게 걸렸다. 풀긴 풀었는데 해설 답안이 훨씬 낫다
 
 
 ```python
-# def binary_search(element, some_list):
+def binary_search(element, some_list):
     # 여기에 코드를 작성하세요
     st = 0 #처음 인덱스
     ed = len(some_list) - 1 #마지막 인덱스
@@ -103,13 +131,11 @@ print(binary_search(3, [2, 3, 5, 7, 11]))
 print(binary_search(11, [2, 3, 5, 7, 11]))
 ```
 
-
-    Cannot execute code, session has been disposed. Please try restarting the Kernel.
-
-
-
-    The Kernel crashed while executing code in the the current cell or a previous cell. Please review the code in the cell(s) to identify a possible cause of the failure. Click <a href='https://aka.ms/vscodeJupyterKernelCrash'>here</a> for more info. View Jupyter <a href='command:jupyter.viewOutput'>log</a> for further details.
-
+    0
+    2
+    0
+    0
+    
 
 
 ```python
@@ -179,40 +205,47 @@ print(binary_search(11, [2, 3, 5, 7, 11]))
     4
     
 
+## <a id='toc1_3_'></a>[정렬](#toc0_)
+---
+- 선택 정렬 selection sort이란 리스트 전체를 순회하면서 최솟값을 찾아서 맨 앞으로 보내는 정렬 방법이다
+- 삽입 정렬 insertion sort 카드 정리하듯이 각 값이 어떤 위치에 들어가야 할지 찾는다  
+
+
+이 외에도 다양한 정렬 알고리즘이 있다 다음 사이트들에서 정렬 알고리즘을 비교해서 볼 수 있다  
+[알고리즘 비교](https://www.toptal.com/developers/sorting-algorithms)  
+[알고리즘 포크 댄스](https://www.youtube.com/@AlgoRythmics)
+
+## <a id='toc1_4_'></a>[알고리즘 평가법](#toc0_)
+---
+알고리즘은 자원을 효율적으로 쓸수록 좋다고 판단한다. 그렇다면 자원은 무엇일까?  
+시간과 공간이다  
+
+예를 들어  
 선형 탐색과 이진 탐색 모두 최소 반복 회수는 1번이다. 1번 만에 값을 찾을 수도 있기 때문  
 그러나 최대 반복 회수는 선형 탐색은 n번, 이진 탐색은 log2n번이다  
 이진 탐색은 리스트의 반을 버리면서 탐색하기 때문에 반복 회수가 log2n이 된다  
-따라서 이진 탐색이 선형 탐색에 비해 효율적일 수 있지만 이진 탐색은 리스트가 정렬돼있어야 한다는 조건이 있다
+따라서 이진 탐색이 선형 탐색에 비해 효율적일 수 있다. 그러나 이진 탐색은 리스트가 정렬돼있어야 한다는 조건이 있다
 
-정렬은 문제 해결의 기본 도구 중 하나이므로 꼭 알아야 한다
+시간과 공간 소모를 어떤 식으로 표기해서 비교할까?  
+점근표기법 漸近 表記法 asymptotic notation으로 표기해서 비교한다  
+점근표기법을 빅오노테이션 Big O notation이라고 한다
 
-선택 정렬 selection sort란 리스트 전체를 순회하면서 최솟값을 찾아서 맨 앞으로 보내는 정렬 방법이다
+### <a id='toc1_4_1_'></a>[시간복잡도](#toc0_)
 
-삽입 정렬 insertion sort 카드 정리하듯이 각 값이 어떤 위치에 들어가야 할지 찾는다
-
-아래 사이트에서 각 정렬 알고리즘의 정렬 속도를 확인할 수 있다
-
-https://www.toptal.com/developers/sorting-algorithms
-
-알고리즘이 효율적이어야 하는 이유는 시간과 공간이 한정적이기 때문이다
-
-시간 복잡도는 알고리즘의 시간 효율을 측정하는 지표 중 하나로  
-알고리즘의 반복 횟수를 입력 데이터의 크기 n의 함수로 표현한 것이다  
+시간 복잡도는 알고리즘의 시간 효율을 측정하는 지표 중 하나로 알고리즘의 반복 횟수를 입력 데이터 크기 n의 함수로 표현한 것이다  
+the time complexity is generally expressed as a function of the size of the input  
 데이터가 증가해도 소요시간이 덜 증가하는 게 좋은 알고리즘이다
 
-the time complexity is generally expressed as a function of the size of the input
-
-알고리즘을 평가할 때 점근표기법 asymptotic notation을 사용한다  
-이를 빅오노테이션 Big O notation이라고 한다
-
-걸리는 시간을 수식으로 표현한 값에서 상수는 무시하고 가장 큰 영향을 주는 n만 남긴다  
-고로 1000000000000n + 1000000000이든 n + 1이든 동일하다  
-n을 극한값으로 가정하기 때문이다 (최악의 케이스 가정)  
-O(n), O(n^2), O(logn) 등이 그 꼴이다
+걸리는 시간을 수식으로 표현한 값에서 상수는 무시하고 가장 큰 영향을 주는 n만 남겨서 표시한다  
+그러므로 (1000000000000n + 1000000000)이든 (n + 1)이든 둘 다 O(n)으로 표기법은 동일하다  
+이러한 이유는 최악의 케이스를 가정해 데이터 사이즈가 무한히 크다고(n을 무한대로) 가정하기 때문이다  
 
 알고리즘 시간 복잡도는 대체로  
 - O(1) < O(logn) < O(n) < O(nlogn) < O(n^2) < O(2^n) < O(n!) 순이다
 
 최악의 경우 몇번 n을 돌려야 하지?를 떠올리면 대체로 알 수 있다
 
+### <a id='toc1_4_2_'></a>[공간복잡도](#toc0_)
 공간 복잡도 역시 마찬가지다 데이터가 n개 일 때 얼마의 공간이 필요한지 n에 대한 함수로 표현한다
+
+## <a id='toc1_5_'></a>[수료증](https://www.codeit.kr/certificates/SU9aO-UJ6Yc-z8jbT-MaBqR) [&#8593;](#toc0_)

@@ -1,14 +1,26 @@
+**Table of contents**<a id='toc0_'></a>    
+- [data science](#toc1_)    
+  - [정의](#toc1_1_)    
+  - [data engineering](#toc1_2_)    
+  - [data science](#toc1_3_)    
+    - [steps](#toc1_3_1_)    
+  - [numpy](#toc1_4_)    
+  - [pandas dataframe](#toc1_5_)    
+  - [수료증](#toc1_6_)    
+
+<!-- vscode-jupyter-toc-config
+	numbering=false
+	anchor=true
+	flat=false
+	minLevel=1
+	maxLevel=6
+	/vscode-jupyter-toc-config -->
+<!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
+
+# <a id='toc1_'></a>[data science](#toc0_)
+
+## <a id='toc1_1_'></a>[정의](#toc0_)
 ---
-layout: single
-title:  "data science"
----
-
-# data science
-
-데이터를 저장하고 분석하는 능력이 발전함에 따라 데이터 분석 능력이 필수가 됐다
-
-## 정의
-
 위키피디아  
 Data science is an interdisciplinary academic field [1] that uses statistics, scientific computing, scientific methods, processes, algorithms and systems to extract or extrapolate knowledge and insights from noisy, structured, and unstructured data.[2]
 
@@ -19,19 +31,24 @@ drew conway: 프로그래밍, 수학 통계, 전문분야 필요
 "실리콘 벨리에 사는 통계학자가 데이터 사이언티스트다"  
 "맥북으로 하는 통계가 데이터 사이언스다"
 
-### engineering
+데이터를 저장하고 분석하는 능력이 발전함에 따라 데이터 분석 능력이 필수가 됐다
+
+## <a id='toc1_2_'></a>[data engineering](#toc0_)
+---
 1. collect
 2. store
 3. process  
 
-### science
+## <a id='toc1_3_'></a>[data science](#toc0_)
+---
 4. analysis
 5. ab test
 6. artificial intelligence
     - machine learning
       - deep learning
 
-### steps
+### <a id='toc1_3_1_'></a>[steps](#toc0_)
+---
 - goal setting
   - what to know, what to ask
   - period
@@ -42,7 +59,7 @@ drew conway: 프로그래밍, 수학 통계, 전문분야 필요
 - analyze
 - communicate
 
-## numpy
+## <a id='toc1_4_'></a>[numpy](#toc0_)
 
 
 ```python
@@ -295,8 +312,8 @@ print(rev.var())
     9509677419.35484
     
 
-## pandas dataframe
-
+## <a id='toc1_5_'></a>[pandas dataframe](#toc0_)
+---
 pandas는 numpy를 이용해서 만들었다. 따라서 물려 받는 기능이 많고 데이터 읽고 쓰기, 새로운 파일로 저장, 시각화, 표 형식 편집 등에 특화됐다
 
 
@@ -851,3 +868,5 @@ pd.read_csv('mega_millions.csv', index_col=0)
 </div>
 
 
+
+## <a id='toc1_6_'></a>[수료증](https://www.codeit.kr/certificates/tkHGu-u6dxG-AyIaM-rC9tJ) [&#8593;](#toc0_)

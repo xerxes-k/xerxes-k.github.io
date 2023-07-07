@@ -1,14 +1,28 @@
----
-layout: single
-title:  "알고리즘 패러다임 Algorithm Paradigm"
----
+**Table of contents**<a id='toc0_'></a>    
+- [알고리즘 패러다임 Algorithm Paradigm](#toc1_)    
+  - [Brute Force 무차별 대입법](#toc1_1_)    
+  - [Divide and Conquer 분할 정복법](#toc1_2_)    
+  - [Dynamic Programming 동적 계획법](#toc1_3_)    
+    - [memoization = topdown = recursive](#toc1_3_1_)    
+    - [tabulation = bottom up = iterative](#toc1_3_2_)    
+  - [Greedy Algorithm 탐욕 알고리즘](#toc1_4_)    
+  - [수료증](#toc1_5_)    
 
-# 알고리즘 패러다임 Algorithm Paradigm
+<!-- vscode-jupyter-toc-config
+	numbering=false
+	anchor=true
+	flat=false
+	minLevel=1
+	maxLevel=6
+	/vscode-jupyter-toc-config -->
+<!-- THIS CELL WILL BE REPLACED ON TOC UPDATE. DO NOT WRITE YOUR TEXT IN THIS CELL -->
+
+# <a id='toc1_'></a>[알고리즘 패러다임 Algorithm Paradigm](#toc0_)
 
 자주 등장하는 알고리즘들을 분류해서 정리하고 패러다임이라 부른다  
 패러다임은 원래 현재까지 정립된 세계관을 말할텐데?
 
-### Brute Force 무차별 대입법  
+## <a id='toc1_1_'></a>[Brute Force 무차별 대입법](#toc0_)
 가능한 경우의 수를 모두 대입해보는 방식
 
 
@@ -96,11 +110,16 @@ print(trapping_rain([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]))
     6
     
 
-### Divide and Conquer 분할 정복법
+## <a id='toc1_2_'></a>[Divide and Conquer 분할 정복법](#toc0_)
 
+0. find base case
 1. divdie
 2. conquer
 3. combine
+
+In data structures and algorithms, Divide and Conquer is a recursive problem-solving approach that divides the problem into smaller subproblems, recursively solves each subproblem, and combines the subproblem's solutions to get the solution of the original problem. So, there are four steps in the divide and conquer algorithm
+
+문제를 쪼개서 재귀적으로 풀고 다시 결과들을 합쳐서 해결한다
 
 
 ```python
@@ -411,16 +430,21 @@ print(list3)
 여러 문제를 풀고 실제로 개발하면서 경험치를 쌓아야 하는 부분이다  
 문제풀이를 많이 하자
 
-# 3.  Dynamic Programming 동적 계획법
+## <a id='toc1_3_'></a>[Dynamic Programming 동적 계획법](#toc0_)
 
-### optimal substructure 최적 부분 구조
+Dynamic Programming is mainly an optimization over plain recursion. Wherever we see a recursive solution that has repeated calls for same inputs, we can optimize it using Dynamic Programming. The idea is to simply store the results of subproblems, so that we do not have to re-compute them when needed later. This simple optimization reduces time complexities from exponential to polynomial.
 
-overlapping subproblem 중복되는 부분 문제를 매번 다시 푸는 것이 아니라 한 번만 풀고 기록해두고 다음에는 기록된 값을 사용하는 것
+재귀함수의 최적화 버전이라고 할 수 있다. 단순히 자기 스스로를 반복해서 불러내는 재귀함수가 있다면 이전 계산 결과를 저장해둠으로써 계산을 반복하지 않게 만드는 게 핵심이다. overlapping subproblem 중복되는 부분 문제를 매번 다시 푸는 것이 아니라 한 번만 풀고 기록해두고 다음에는 기록된 값을 사용하는 것
 
-1. memoization 메모이제이션
-2. tabulation 타뷸레이션
+그러려면 두 가지 전제가 필요하다
+- optimal substructure 최적 부분 구조가 있다
+- overlapping subproblem 중복되는 하위 문제가 있다
 
-##### memoization = topdown = recursive
+크게 두가지 방법이 있다
+1. memoization 메모이제이션: 사전 + 재귀함수. 결국 재귀함수라 call stack이 넘칠 수 있다
+2. tabulation 타뷸레이션: 리스트 + 반복문. 반복문이라 불필요한 계산을 할 수도 있다
+
+### <a id='toc1_3_1_'></a>[memoization = topdown = recursive](#toc0_)
 
 
 ```python
@@ -479,7 +503,7 @@ print(fib(500))
     139423224561697880139724382870407283950070256587697307264108962948325571622863290691557658876222521294125
     
 
-##### tabulation = bottom up = iterative
+### <a id='toc1_3_2_'></a>[tabulation = bottom up = iterative](#toc0_)
 
 here we go again  
 다행히 이건 좀 덜 걸렸다
@@ -503,9 +527,6 @@ print(fib_tab(132))
     225851433717
     1725375039079340637797070384
     
-
-memoization은 결국 재귀 함수이기 때문에 콜 스택이 너무 쌓일 위험이 있을 수 있다  
-tabulation은 반복문이기 때문에 필요 없는 계산을 할 수도 있다
 
 공간 최적화 -> tabulation은 모든 값을 저장하고 있으니 저장하는 메모리를 최소화해보자  
 기존 tabulation은 n개를 저장하니까 O(n)이었다  
@@ -675,14 +696,16 @@ print(max_profit([0, 100, 200, 400, 600, 900, 1200, 1300, 1500, 1800], 9))
     1800
     
 
-### Greedy Algorithm 탐욕 알고리즘
+## <a id='toc1_4_'></a>[Greedy Algorithm 탐욕 알고리즘](#toc0_)
 
-간단하고 빠르되 정답을 보장하지는 않는다
+간단하고 빠르되 최적해를 보장하지는 않는다
 
-greedy choice property: If an optimal solution to the problem can be found by choosing the best choice at each step without reconsidering the previous steps once chosen, the problem can be solved using a greedy approach. This property is called greedy choice property.  
+그러나 최적해를 구할 수 있는 경우가 있는데 두 가지 조건을 갖춰야 한다
 
-optimal substructure: If the optimal overall solution to the problem corresponds to the optimal solution to its subproblems, then the problem can be solved using a greedy approach.
-Dynamic Programming에서 필요한 부분. 재귀처럼 문제가 문제 안에 문제를 품은 형태인지
+- greedy choice property: If an optimal solution to the problem can be found by choosing the best choice at each step without reconsidering the previous steps once chosen, the problem can be solved using a greedy approach. This property is called greedy choice property. 이전 상황의 선택을 재고하지 않아도 현재 상황에서 최적의 선택이 가능하다. 혹은 각 단계에서의 최선의 선택이 최종 답을 선택하는 데 최선인지
+
+- optimal substructure: If the optimal overall solution to the problem corresponds to the optimal solution to its subproblems, then the problem can be solved using a greedy approach.
+Dynamic Programming에서도 필요했던 조건. 하위 문제를 해결하는 방법이 전체 문제를 해결하는 방법과 동일한지
 
 쩔었따. 아래 문제는 나 스스로 맞췄다. sorted(coin_list, reverse= True) 이걸 아는 게 포인트였다  
 그러니까 위에서 내가 좌절을 느꼈던 것도 정당하다. sorted를 모르면 못 푸는 문제를 sorted를 알려주지 않고 풀라고 하니  
@@ -922,3 +945,5 @@ lt
     [(4, 5), (1, 7), (6, 8), (6, 10), (9, 10)]
 
 
+
+## <a id='toc1_5_'></a>[수료증](https://www.codeit.kr/certificates/YvabT-rp7D6-N3B4m-Kjw2k) [&#8593;](#toc0_)
