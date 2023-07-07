@@ -1,3 +1,8 @@
+---
+layout: single
+title:  "ann"
+---
+
 **Table of contents**<a id='toc0_'></a>    
 - [artificial neural network ann 인공 신경망과 deep learning dl 딥러닝](#toc1_)    
   - [정의](#toc1_1_)    
