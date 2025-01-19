@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     
     'tester',
     'newyear',
+    'tasks',
 ]
 
 MIDDLEWARE = [
